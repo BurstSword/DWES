@@ -19,4 +19,7 @@ public class DatosNoCorrectosException extends Exception{
         }
         return dni;
     }
+    public static char sexoIncorrecto(String sexo){
+        if(Pattern.matches())
+    }
 }
