@@ -38,11 +38,11 @@ public class Empleado extends Persona {
         super(nombre, dni, sexo);
 
         /*Comprobamos que el sexo sea solo H o M y que la categoria no sea inferior a 1 ni superior a 10 */
-        if (!Pattern.matches(("^[HMhm]"), sexo + "") || (categoria < 1 || categoria > 10) || !Pattern.matches(("(\\d{8})([-]?)([A-Z]{1})"),dni) || anyos<0) {
+        if (!Pattern.matches(("^[HMhm]"), sexo + "")  || !Pattern.matches(("(\\d{8})([-]?)([A-Z]{1})"),dni) || anyos<0) {
             throw new DatosNoCorrectosException();
         }
 
-        this.categoria = categoria;
+        setCategoria(categoria);
 
         this.anyos = anyos;
     }

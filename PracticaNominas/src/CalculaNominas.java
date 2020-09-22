@@ -15,7 +15,7 @@ public class CalculaNominas {
             try {
                 empleado1.setCategoria(9);
             } catch (DatosNoCorrectosException e) {
-                e.printStackTrace();
+                System.out.println("Introduce los datos correctamente");
             }
 
             escribe(empleado1, empleado2);
