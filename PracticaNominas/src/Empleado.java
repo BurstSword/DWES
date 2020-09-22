@@ -1,5 +1,3 @@
-package main.java;
-
 import Laboral.Persona;
 
 import java.util.regex.Pattern;

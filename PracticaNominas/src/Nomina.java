@@ -1,5 +1,3 @@
-package main.java;
-
 /**
  * Clase encargas de almacenar los sueldos en funcion de la categoria
  */
