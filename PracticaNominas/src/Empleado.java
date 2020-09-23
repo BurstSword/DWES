@@ -61,6 +61,14 @@ public class Empleado extends Persona {
 
     }
 
+    public int getAnyos() {
+        return anyos;
+    }
+
+    public void setAnyos(int anyos) {
+        this.anyos = anyos;
+    }
+
     /**
      * Metodo que se encarga de aumentar los años de antigüedad del empleado en 1
      */
