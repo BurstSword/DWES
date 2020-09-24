@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.ArrayList;
 
 
 public class ModificarFichero {
@@ -35,13 +36,21 @@ public class ModificarFichero {
     }
 
 
-    public void escribirFichero() {
+    public void escribirFichero(ArrayList<Empleado> empleados) {
         FileWriter fichero = null;
         PrintWriter pw = null;
         try {
-            fichero = new FileWriter("..\\salarios.txt");
+            fichero = new FileWriter("..\\empleados.txt");
             pw = new PrintWriter(fichero);
 
+            for (Empleado empleado:
+                 empleados) {
+                pw.println(empleado.getNombre());
+                pw.println(empleado.getDni());
+                pw.println(empleado.getSexo());
+                pw.println(""+empleado.getCategoria());
+                pw.println(""+empleado.getAnyos());
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
