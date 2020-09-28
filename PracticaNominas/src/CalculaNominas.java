@@ -12,7 +12,7 @@ public class CalculaNominas {
             empleado1 = new Empleado("James Cosling", "32000032G", 'M', 4, 7);
             empleado3 = new Empleado("James Cosling", "32000032P", 'M', 4, 7);
             empleado2 = new Empleado("Ada Lovelace", "32000031R", 'M');
-
+            System.out.println("Holi");
 
         } catch (DatosNoCorrectosException e) {
             System.out.println("Introduce los datos correctamente");
