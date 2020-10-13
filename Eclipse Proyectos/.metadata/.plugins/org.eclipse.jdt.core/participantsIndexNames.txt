@@ -1,0 +1,7 @@
+INDEX VERSION 1.131
+C:\Users\Ryu\Desktop\Eclipse Proyectos\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1803738718.index
+\PruebaWeb\src
+C:\Users\Ryu\Desktop\Eclipse Proyectos\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3683663568.index
+\demoWebApp2\src\main\java
+C:\Users\Ryu\Desktop\Eclipse Proyectos\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3370608302.index
+\FotogramaPerdidoV0\src
