@@ -1,9 +1,7 @@
 import java.sql.*;
 
 public class GestionBBDD {
-    private Connection dbConnection;
-    private Statement st;
-    private ResultSet rs;
+
 
 
     public Connection getDBConnection() {
