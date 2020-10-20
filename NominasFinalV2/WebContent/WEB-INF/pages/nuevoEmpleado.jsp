@@ -38,14 +38,14 @@
                         </fieldset>
 
                         <fieldset class="form-group">
-                            <label>Categoría</label> <input class="form-control" name="categoria" type="text"">
+                            <label>Categoría</label> <input class="form-control" name="categoria">
                         </fieldset>
 
                         <fieldset class="form-group">
-                            <label>Años</label> <input class="form-control" name="anyos" type="text">
+                            <label>Años</label> <input class="form-control" name="anyos">
                         </fieldset>
 
-                        <a class="btn btn-success">Guardar</a>
+                        <a href="/NominasFinalV2/EmpleadoServlet?action=insertar&nombre=nombre&dni=dni&sexo=sexo&categoria=categoria&anyos=anyos" class="btn btn-success">Guardar</a>
                         
                     </div>
                 </div>

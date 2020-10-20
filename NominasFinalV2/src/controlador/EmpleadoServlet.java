@@ -79,7 +79,7 @@ public class EmpleadoServlet extends HttpServlet {
 		    }
 	
 	 private void insertarEmpleado(HttpServletRequest request, HttpServletResponse response)
-			    throws SQLException, IOException {
+			    throws SQLException, IOException, ServletException {
 			        String nombre = request.getParameter("nombre");
 			        String dni = request.getParameter("dni");
 			        String sexo = request.getParameter("sexo");
@@ -87,6 +87,7 @@ public class EmpleadoServlet extends HttpServlet {
 			        int categoria = Integer.parseInt(request.getParameter("categoria")) ;
 			        Empleado empleado = new Empleado(nombre, dni, sexo, anyos, categoria);
 			        EmpleadoDAO.insertarEmpleado(empleado);
+			        nuevoEmpleado(request,response);
 			    }
 	 
 	 private void paginaPrincipal(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
