@@ -23,30 +23,30 @@
                     <div class="card-body">
                         <h2>Editar empleado</h2>
 
-                        
+                        <form method="post" action="/NominasFinalV2/EmpleadoServlet?action=modificar">
 
                         <fieldset class="form-group">
-                            <label>Nombre</label> <input type="text" value="<c:out value='${empleado.nombre}' />" class="form-control"  required="required">
+                            <label>Nombre</label> <input type="text" value="<c:out value='${empleado.nombre}' />" class="form-control"  name="nombre" required="required">
                         </fieldset>
 
 						<fieldset class="form-group">
-                            <label>DNI</label> <input readonly type="text" value="<c:out value='${empleado.dni}' />" class="form-control"  required="required">
+                            <label>DNI</label> <input readonly type="text" value="<c:out value='${empleado.dni}' />" class="form-control" name="dni" required="required">
                         </fieldset>
                         
                         <fieldset class="form-group">
-                            <label>Sexo</label> <input type="text" value="<c:out value='${empleado.sexo}' />" class="form-control" required="required">
+                            <label>Sexo</label> <input type="text" value="<c:out value='${empleado.sexo}' />" class="form-control" name="sexo" required="required">
                         </fieldset>
 
                         <fieldset class="form-group">
-                            <label>Categoría</label> <input type="text" value="<c:out value='${empleado.categoria}' />" class="form-control" >
+                            <label>Categoría</label> <input type="text" value="<c:out value='${empleado.categoria}' />" name="categoria" class="form-control" >
                         </fieldset>
 
                         <fieldset class="form-group">
-                            <label>Años</label> <input type="text" value="<c:out value='${empleado.anyos}' />" class="form-control" >
+                            <label>Años</label> <input type="text" value="<c:out value='${empleado.anyos}' />" name="anyos" class="form-control" >
                         </fieldset>
 
-                        <button type="submit" class="btn btn-success">Guardar</button>
-                        
+                        <input type="submit" value="Guardar" class="btn btn-success">
+                        </form>
                     </div>
                 </div>
             </div>

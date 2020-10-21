@@ -106,11 +106,11 @@ public class EmpleadoDAO {
         boolean filaActualizada;
         try (Connection connection = getDBConnection(); PreparedStatement statement = connection.prepareStatement(actualizarEmpleado);) {
             statement.setString(1, empleado.getNombre());
-            statement.setString(2, empleado.getDni());
-            statement.setString(3, empleado.getSexo());
-            statement.setInt(4, empleado.getCategoria());
+            statement.setString(2, empleado.getSexo());
+            statement.setInt(3, empleado.getCategoria());
             statement.setInt(4, empleado.getAnyos());
-
+            statement.setString(5, empleado.getDni());
+            
             filaActualizada = statement.executeUpdate() > 0;
         }
         return filaActualizada;

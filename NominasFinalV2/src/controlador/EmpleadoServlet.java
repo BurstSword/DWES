@@ -41,9 +41,6 @@ public class EmpleadoServlet extends HttpServlet {
 	                case "nuevoEmpleado":
 	                    nuevoEmpleado(request, response);
 	                    break;
-	                case "insertar":
-	                    insertarEmpleado(request, response);
-	                    break;
 	                case "lista":
 	                	listarEmpleados(request, response);
 	                    break;
@@ -68,6 +65,22 @@ public class EmpleadoServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		String action = request.getParameter("action");
+
+        try {
+            switch (action) {
+                
+                case "insertar":
+                    insertarEmpleado(request, response);
+                    break;
+                case "modificar":
+                	modificarEmpleado(request,response);
+                	break;
+                
+            }
+        } catch (SQLException ex) {
+            throw new ServletException(ex);
+        }
 		doGet(request, response);
 	}
 	private void listarEmpleados(HttpServletRequest request, HttpServletResponse response)
@@ -79,14 +92,18 @@ public class EmpleadoServlet extends HttpServlet {
 		    }
 	
 	 private void insertarEmpleado(HttpServletRequest request, HttpServletResponse response)
-			    throws SQLException, IOException {
+			    throws SQLException, IOException, ServletException {
 			        String nombre = request.getParameter("nombre");
 			        String dni = request.getParameter("dni");
 			        String sexo = request.getParameter("sexo");
-			        int anyos =Integer.parseInt(request.getParameter("anyos")) ;
-			        int categoria = Integer.parseInt(request.getParameter("categoria")) ;
+			        String anyosStr =request.getParameter("anyos") ;
+			        String categoriaStr = request.getParameter("categoria") ;
+			        
+			        int anyos= Integer.parseInt(anyosStr);
+			        int categoria= Integer.parseInt(categoriaStr);
 			        Empleado empleado = new Empleado(nombre, dni, sexo, anyos, categoria);
 			        EmpleadoDAO.insertarEmpleado(empleado);
+			        listarEmpleados(request,response);
 			    }
 	 
 	 private void paginaPrincipal(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -99,6 +116,20 @@ public class EmpleadoServlet extends HttpServlet {
 			        EmpleadoDAO.eliminarEmpleado(dni);
 			        listarEmpleados(request,response);
 
+			    }
+	 private void modificarEmpleado(HttpServletRequest request, HttpServletResponse response)
+			    throws SQLException, IOException, ServletException {
+			        String nombre = request.getParameter("nombre");
+			        String dni = request.getParameter("dni");
+			        String sexo = request.getParameter("sexo");
+			        String anyosStr =request.getParameter("anyos") ;
+			        String categoriaStr = request.getParameter("categoria") ;
+			        
+			        int anyos= Integer.parseInt(anyosStr);
+			        int categoria= Integer.parseInt(categoriaStr);
+			        Empleado empleado = new Empleado(nombre, dni, sexo, anyos, categoria);
+			        EmpleadoDAO.actualizarEmpleado(empleado);
+			        listarEmpleados(request,response);
 			    }
 	 private void actualizarEmpleado(HttpServletRequest request, HttpServletResponse response)
 			    throws SQLException, IOException, ServletException {

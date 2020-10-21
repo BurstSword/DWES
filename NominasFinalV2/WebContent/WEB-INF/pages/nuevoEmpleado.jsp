@@ -23,7 +23,7 @@
                     <div class="card-body">
                         <h2>Nuevo empleado</h2>
 
-                        
+                        <form method="post" action="/NominasFinalV2/EmpleadoServlet?action=insertar">
 
                         <fieldset class="form-group">
                             <label>Nombre</label> <input type="text" class="form-control" name="nombre"   required="required">
@@ -38,15 +38,15 @@
                         </fieldset>
 
                         <fieldset class="form-group">
-                            <label>Categoría</label> <input class="form-control" name="categoria" type="text"">
+                            <label>Categoría</label> <input class="form-control" name="categoria">
                         </fieldset>
 
                         <fieldset class="form-group">
-                            <label>Años</label> <input class="form-control" name="anyos" type="text">
+                            <label>Años</label> <input class="form-control" name="anyos">
                         </fieldset>
 
-                        <a class="btn btn-success">Guardar</a>
-                        
+                        <input type="submit" value="Guardar" class="btn btn-success">
+                        </form>
                     </div>
                 </div>
             </div>
