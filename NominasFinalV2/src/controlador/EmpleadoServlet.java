@@ -103,7 +103,11 @@ public class EmpleadoServlet extends HttpServlet {
 			        int categoria= Integer.parseInt(categoriaStr);
 			        Empleado empleado = new Empleado(nombre, dni, sexo, anyos, categoria);
 			        EmpleadoDAO.insertarEmpleado(empleado);
+<<<<<<< HEAD
 			        listarEmpleados(request,response);
+=======
+			        nuevoEmpleado(request,response);
+>>>>>>> main
 			    }
 	 
 	 private void paginaPrincipal(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

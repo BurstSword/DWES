@@ -45,8 +45,13 @@
                             <label>Años</label> <input class="form-control" name="anyos">
                         </fieldset>
 
+<<<<<<< HEAD
                         <input type="submit" value="Guardar" class="btn btn-success">
                         </form>
+=======
+                        <a href="/NominasFinalV2/EmpleadoServlet?action=insertar&nombre=nombre&dni=dni&sexo=sexo&categoria=categoria&anyos=anyos" class="btn btn-success">Guardar</a>
+                        
+>>>>>>> main
                     </div>
                 </div>
             </div>
