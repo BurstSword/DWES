@@ -106,7 +106,7 @@ public class EmpleadoServlet extends HttpServlet {
 
 			        listarEmpleados(request,response);
 
-			        nuevoEmpleado(request,response);
+			      
 
 			    }
 	 
