@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\Ryu\Desktop\Eclipse Proyectos\NominasFinal\WebContent\WEB-INF\index.jsp"/>
 			<item value="C:\Users\Ryu\Desktop\Eclipse Proyectos"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -26,13 +27,17 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="es.soterohernadez.daw.demoWebApp2"/>
+			<item value="nominasGroup.nominasPrueba"/>
+			<item value="nominasGroup.Prueba"/>
+			<item value="nominasGroup.nominas"/>
 		</list>
 		<list key="groupId">
-			<item value="es.soterohernadez.daw"/>
+			<item value="nominasGroup"/>
 		</list>
 		<list key="artifactId">
-			<item value="demoWebApp2"/>
+			<item value="nominasPrueba"/>
+			<item value="Prueba"/>
+			<item value="nominas"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -44,6 +49,7 @@
 		</list>
 		<list key="version">
 			<item value="0.0.1-SNAPSHOT"/>
+			<item value="1.0"/>
 		</list>
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
@@ -68,5 +74,18 @@
 	<section name="org.eclipse.m2e.core.pom.overview">
 	</section>
 	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="wizardPage">
+		<list key="groupId">
+			<item value="NominasFinalV2"/>
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+			<item value="NominasFinalV2"/>
+		</list>
+		<list key="version">
+			<item value="1.0"/>
+		</list>
 	</section>
 </section>

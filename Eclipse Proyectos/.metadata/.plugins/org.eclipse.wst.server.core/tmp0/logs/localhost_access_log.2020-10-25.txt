@@ -1,0 +1,5 @@
+127.0.0.1 - - [25/Oct/2020:12:37:42 +0100] "GET / HTTP/1.1" 404 687
+0:0:0:0:0:0:0:1 - - [25/Oct/2020:12:37:43 +0100] "GET /NominasFinalV2/ HTTP/1.1" 200 1595
+0:0:0:0:0:0:0:1 - - [25/Oct/2020:12:37:43 +0100] "GET /NominasFinalV2/DesktopHD.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [25/Oct/2020:12:37:47 +0100] "GET /NominasFinalV2/EmpleadoServlet?action=lista HTTP/1.1" 200 2750
+0:0:0:0:0:0:0:1 - - [25/Oct/2020:12:37:51 +0100] "GET /NominasFinalV2/EmpleadoServlet?action=editar&dni=30271239H HTTP/1.1" 200 2432

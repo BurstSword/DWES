@@ -6,7 +6,11 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
-			<item value="C:\Users\Ryu\Desktop\Eclipse Proyectos\FotogramaPerdidoV0"/>
+			<item value="C:\Users\Ryu\Desktop\2º DAW\DWES\NominasFinalV2"/>
+			<item value="C:\Users\Ryu\Desktop\EjemploDWP"/>
+			<item value="C:\Users\Ryu\Downloads\EjMenu2"/>
+			<item value="C:\Users\Ryu\Downloads\jsp-servlet-jdbc-mysql-crud-tutorial-master"/>
+			<item value="C:\Users\Ryu\Downloads\nominas"/>
 		</list>
 	</section>
 </section>

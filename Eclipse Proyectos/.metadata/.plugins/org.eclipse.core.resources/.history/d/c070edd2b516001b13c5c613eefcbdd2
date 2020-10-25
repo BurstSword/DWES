@@ -1,0 +1,10 @@
+package dao;
+
+public class NominaDAO {
+
+	
+	private static final String extraerNomina = "select sueldo from nominas where dniEmpleados =?";
+	private static final String insertarNomina = "INSERT INTO nominas"
+			+ "  (sueldo, dniEmpleado) VALUES " + " (?, ?);";
+	
+}

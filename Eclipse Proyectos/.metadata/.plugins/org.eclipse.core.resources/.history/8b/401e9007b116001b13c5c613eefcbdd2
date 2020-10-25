@@ -1,0 +1,8 @@
+package dao;
+
+public class NominaDAO {
+
+	
+	private static final String extraernomina = "select sueldo from nominas where dniEmpleados =?";
+	
+}
