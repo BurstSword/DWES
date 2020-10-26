@@ -16,7 +16,7 @@ public class NominaDAO {
 	private static final String extraerNomina = "select sueldo from nominas where dniEmpleados =?";
 	private static final String insertarNomina = "INSERT INTO nominas"
 			+ "  (sueldo, dniEmpleado) VALUES " + " (?, ?);";
-
+	private static final String actualizarNomina = "update nominas set sueldo = ? where dni = ?;";
 
 	public static Connection getDBConnection() {
 		try {
@@ -70,5 +70,17 @@ public static Nomina extraerNomina(String dniEmpleado) {
 	}
 	return nomina;
 }
-	
+public static boolean actualizarNomina(Nomina nomina) throws SQLException {
+    boolean filaActualizada;
+    try (Connection connection = getDBConnection(); PreparedStatement statement = connection.prepareStatement(actualizarNomina);) {
+    	statement.setString(1, nomina.getDniEmp());
+    	
+        statement.setInt(1, nomina.getSueldo());
+        statement.setString(2, nomina.getSueldo());
+        
+        
+        filaActualizada = statement.executeUpdate() > 0;
+    }
+    return filaActualizada;
+}
 }

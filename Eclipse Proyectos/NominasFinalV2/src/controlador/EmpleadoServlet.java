@@ -137,6 +137,8 @@ public class EmpleadoServlet extends HttpServlet {
 			        int categoria= Integer.parseInt(categoriaStr);
 			        Empleado empleado = new Empleado(nombre, dni, sexo, anyos, categoria);
 			        EmpleadoDAO.actualizarEmpleado(empleado);
+			        Nomina nomina = new Nomina(Nomina.sueldo(empleado,empleado.getCategoria()),dni);
+			        NominaDAO.actualizarNomina(nomina);
 			        listarEmpleados(request,response);
 			    }
 	 private void actualizarEmpleado(HttpServletRequest request, HttpServletResponse response)

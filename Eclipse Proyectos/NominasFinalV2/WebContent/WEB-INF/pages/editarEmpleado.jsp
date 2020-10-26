@@ -59,7 +59,7 @@
 							class="form-control">
 					</fieldset>
 					<fieldset class="form-group">
-						<label>Salario</label> <input type="text"
+						<label>Salario</label> <input readonly type="text"
 							value="<c:out value='${nomina.sueldo}' />" name="sueldo"
 							class="form-control">
 					</fieldset>
