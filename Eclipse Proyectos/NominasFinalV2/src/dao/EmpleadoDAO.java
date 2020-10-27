@@ -40,7 +40,7 @@ public class EmpleadoDAO {
 		return dbConnection;
 	}
 
-	public static void insertarEmpleado(Empleado empleado) throws SQLException {
+	public  void insertarEmpleado(Empleado empleado) throws SQLException {
 
 		
 		try (Connection connection = getDBConnection();
@@ -58,7 +58,7 @@ public class EmpleadoDAO {
 
 	
 
-	public static List<Empleado> listarEmpleados() {
+	public  List<Empleado> listarEmpleados() {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		ResultSet rs = null;
@@ -85,7 +85,7 @@ public class EmpleadoDAO {
 		}
 		return empleados;
 	}
-	public static boolean eliminarEmpleado(String dni) throws SQLException {
+	public  boolean eliminarEmpleado(String dni) throws SQLException {
         boolean rowDeleted;
         try {
         	Connection connection = getDBConnection(); 
@@ -102,7 +102,7 @@ public class EmpleadoDAO {
     	
     }
 	}
-	public static boolean actualizarEmpleado(Empleado empleado) throws SQLException {
+	public  boolean actualizarEmpleado(Empleado empleado) throws SQLException {
         boolean filaActualizada;
         try (Connection connection = getDBConnection(); PreparedStatement statement = connection.prepareStatement(actualizarEmpleado);) {
             statement.setString(1, empleado.getNombre());
@@ -115,7 +115,7 @@ public class EmpleadoDAO {
         }
         return filaActualizada;
     }
-	public static Empleado extraerEmpleado(String dniEmpleado) {
+	public  Empleado extraerEmpleado(String dniEmpleado) {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		ResultSet rs = null;

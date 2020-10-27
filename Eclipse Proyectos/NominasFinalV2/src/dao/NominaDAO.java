@@ -76,7 +76,7 @@ public static boolean actualizarNomina(Nomina nomina) throws SQLException {
     	statement.setString(1, nomina.getDniEmp());
     	
         statement.setInt(1, nomina.getSueldo());
-        statement.setString(2, nomina.getSueldo());
+       
         
         
         filaActualizada = statement.executeUpdate() > 0;
