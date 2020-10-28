@@ -5,12 +5,12 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import model.Empleado;
-import model.Nomina;
+
 
 public class EmpleadoDAO {
 
@@ -22,7 +22,6 @@ public class EmpleadoDAO {
 	private static final String extraerEmpleado = "select nombre, dni, sexo, anyos, categoria from empleados where dni =?";
 	private static final String listarEmpleados = "select * from empleados";
 	private static final String eliminarEmpleado = "delete from empleados where dni = ?;";
-	private static final String eliminarNomina = "delete from nominas where dniEmpleados = ?;";
 	private static final String actualizarEmpleado = "update empleados set nombre = ?,sexo= ?, categoria =?, anyos =? where dni = ?;";
 
 	public static Connection getDBConnection() {
@@ -43,8 +42,9 @@ public class EmpleadoDAO {
 	public  void insertarEmpleado(Empleado empleado) throws SQLException {
 
 		
-		try (Connection connection = getDBConnection();
-				PreparedStatement preparedStatement = connection.prepareStatement(insertarEmpleadoSQL)) {
+		try {
+			Connection connection = getDBConnection();
+			PreparedStatement preparedStatement = connection.prepareStatement(insertarEmpleadoSQL);
 			preparedStatement.setString(1, empleado.getNombre());
 			preparedStatement.setString(2, empleado.getDni());
 			preparedStatement.setString(3, empleado.getSexo());
@@ -90,13 +90,11 @@ public class EmpleadoDAO {
         try {
         	Connection connection = getDBConnection(); 
         	PreparedStatement statement = connection.prepareStatement(eliminarEmpleado);
-        	PreparedStatement statementNomina = connection.prepareStatement(eliminarNomina);
         	
             statement.setString(1, dni);
-            statementNomina.setString(1, dni);
             
             rowDeleted = statement.executeUpdate() > 0;
-            rowDeleted = statementNomina.executeUpdate() >0;
+            
         return rowDeleted;
     }finally {
     	
@@ -104,7 +102,8 @@ public class EmpleadoDAO {
 	}
 	public  boolean actualizarEmpleado(Empleado empleado) throws SQLException {
         boolean filaActualizada;
-        try (Connection connection = getDBConnection(); PreparedStatement statement = connection.prepareStatement(actualizarEmpleado);) {
+        try  {
+        	Connection connection = getDBConnection(); PreparedStatement statement = connection.prepareStatement(actualizarEmpleado);
             statement.setString(1, empleado.getNombre());
             statement.setString(2, empleado.getSexo());
             statement.setInt(3, empleado.getCategoria());
@@ -112,6 +111,8 @@ public class EmpleadoDAO {
             statement.setString(5, empleado.getDni());
             
             filaActualizada = statement.executeUpdate() > 0;
+        }finally{
+        	
         }
         return filaActualizada;
     }

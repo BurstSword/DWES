@@ -42,19 +42,19 @@
 					</fieldset>
 
 					<fieldset class="form-group">
-						<label>Sexo</label> <input type="text"
+						<label>Sexo</label> <input pattern="[HM]{1}" type="text"
 							value="<c:out value='${empleado.sexo}' />" class="form-control"
 							name="sexo" required="required">
 					</fieldset>
 
 					<fieldset class="form-group">
-						<label>Categoría</label> <input type="text"
+						<label>Años</label> <input pattern="[0-9]" type="text"
 							value="<c:out value='${empleado.categoria}' />" name="categoria"
 							class="form-control">
 					</fieldset>
 
 					<fieldset class="form-group">
-						<label>Años</label> <input type="text"
+						<label>Categoría</label> <input pattern="^(?:[1-9]|0[1-9]|10)$" type="text"
 							value="<c:out value='${empleado.anyos}' />" name="anyos"
 							class="form-control">
 					</fieldset>

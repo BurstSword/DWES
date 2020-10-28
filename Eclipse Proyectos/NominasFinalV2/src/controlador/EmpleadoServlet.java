@@ -110,10 +110,11 @@ public class EmpleadoServlet extends HttpServlet {
 		int anyos = Integer.parseInt(anyosStr);
 		int categoria = Integer.parseInt(categoriaStr);
 		Empleado empleado = new Empleado(nombre, dni, sexo, anyos, categoria);
-		Nomina nomina = new Nomina(Nomina.sueldo(empleado, categoria), dni);
+		Nomina nomina = new Nomina(Nomina.sueldo(empleado), dni);
 		NominaDAO.insertarNomina(nomina);
 		empleadoDAO.insertarEmpleado(empleado);
-
+		
+		
 		listarEmpleados(request, response);
 
 	}
@@ -127,8 +128,10 @@ public class EmpleadoServlet extends HttpServlet {
 	private void eliminarEmpleado(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
 		EmpleadoDAO empleadoDAO = new EmpleadoDAO();
+		NominaDAO nominaDAO = new NominaDAO();
 		String dni = request.getParameter("dni");
 		empleadoDAO.eliminarEmpleado(dni);
+		nominaDAO.eliminarNomina(dni);
 		listarEmpleados(request, response);
 
 	}
@@ -136,6 +139,7 @@ public class EmpleadoServlet extends HttpServlet {
 	private void modificarEmpleado(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
 		EmpleadoDAO empleadoDAO = new EmpleadoDAO();
+		NominaDAO nominaDAO = new NominaDAO();
 		String nombre = request.getParameter("nombre");
 		String dni = request.getParameter("dni");
 		String sexo = request.getParameter("sexo");
@@ -145,7 +149,9 @@ public class EmpleadoServlet extends HttpServlet {
 		int anyos = Integer.parseInt(anyosStr);
 		int categoria = Integer.parseInt(categoriaStr);
 		Empleado empleado = new Empleado(nombre, dni, sexo, anyos, categoria);
+		Nomina nomina = new Nomina(Nomina.sueldo(empleado),dni);
 		empleadoDAO.actualizarEmpleado(empleado);
+		nominaDAO.actualizarNomina(nomina);
 		listarEmpleados(request, response);
 	}
 

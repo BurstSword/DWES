@@ -43,9 +43,9 @@ public class Nomina {
      * @param empleado El empleado al que se le calcula el sueldo
      * @return El sueldo del empleado enviado ya calculado
      */
-     public static int sueldo(Empleado empleado,int categoria){
+     public static int sueldo(Empleado empleado){
         int sueldo;
-        sueldo = SUELDO_BASE[categoria-1]+5000*empleado.getAnyos();
+        sueldo = SUELDO_BASE[empleado.getCategoria()-1]+5000*empleado.getAnyos();
         return sueldo;
     }
 }

@@ -31,19 +31,19 @@
                         </fieldset>
 
 						<fieldset class="form-group">
-                            <label>DNI</label> <input type="text" class="form-control" name="dni" required="required">
+                            <label>DNI</label> <input type="text" class="form-control" name="dni" pattern="[0-9]{8}[A-Za-z]{1}" required="required">
                         </fieldset>
                         
                         <fieldset class="form-group">
-                            <label>Sexo</label> <input type="text" class="form-control" name="sexo"  required="required">
+                            <label>Sexo</label> <input type="text" class="form-control" name="sexo" pattern="[HM]{1}"  required="required">
                         </fieldset>
 
                         <fieldset class="form-group">
-                            <label>Categoría</label> <input class="form-control" name="categoria">
+                            <label>Años</label> <input pattern="[0-9]" class="form-control" name="categoria">
                         </fieldset>
 
                         <fieldset class="form-group">
-                            <label>Años</label> <input class="form-control" name="anyos">
+                            <label>Categoría</label> <input pattern="^(?:[1-9]|0[1-9]|10)$" class="form-control" name="anyos">
                         </fieldset>
 
 
