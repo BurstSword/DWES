@@ -155,8 +155,8 @@ public class EmpleadoServlet extends HttpServlet {
 		listarEmpleados(request, response);
 	}
 
-	private void actualizarEmpleado(HttpServletRequest request, HttpServletResponse response)
-			throws SQLException, IOException, ServletException {
+	private void actualizarEmpleado(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+			 {
 		EmpleadoDAO empleadoDAO = new EmpleadoDAO();
 		String dni = request.getParameter("dni");
 
@@ -172,6 +172,10 @@ public class EmpleadoServlet extends HttpServlet {
 	private void nuevoEmpleado(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/pages/nuevoEmpleado.jsp");
+		dispatcher.forward(request, response);
+	}
+	private void paginaError(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/pages/error.jsp");
 		dispatcher.forward(request, response);
 	}
 }
