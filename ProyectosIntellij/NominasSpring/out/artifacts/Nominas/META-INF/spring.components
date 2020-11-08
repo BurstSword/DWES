@@ -1,0 +1,5 @@
+springmvc.controller.Controlador=org.springframework.stereotype.Component
+springmvc.dao.EmpleadoDAOImpl=org.springframework.stereotype.Component
+springmvc.entity.Empleado=javax.persistence.Entity,javax.persistence.Table
+springmvc.entity.Nomina=javax.persistence.Entity,javax.persistence.Table
+springmvc.service.EmpleadoServiceImpl=org.springframework.stereotype.Component
