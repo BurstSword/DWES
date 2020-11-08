@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ page errorPage="/NominasFinalV2/WebContent/WEB-INF/pages/error.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>

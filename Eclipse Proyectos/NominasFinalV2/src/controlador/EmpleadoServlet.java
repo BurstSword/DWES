@@ -91,11 +91,13 @@ public class EmpleadoServlet extends HttpServlet {
 
 	private void listarEmpleados(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
+
 		EmpleadoDAO empleadoDAO = new EmpleadoDAO();
 		List<Empleado> listaEmpleado = empleadoDAO.listarEmpleados();
 		request.setAttribute("listaEmpleado", listaEmpleado);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/pages/lista.jsp");
 		dispatcher.forward(request, response);
+
 	}
 
 	private void insertarEmpleado(HttpServletRequest request, HttpServletResponse response)
@@ -113,8 +115,7 @@ public class EmpleadoServlet extends HttpServlet {
 		Nomina nomina = new Nomina(Nomina.sueldo(empleado), dni);
 		NominaDAO.insertarNomina(nomina);
 		empleadoDAO.insertarEmpleado(empleado);
-		
-		
+
 		listarEmpleados(request, response);
 
 	}
@@ -149,18 +150,19 @@ public class EmpleadoServlet extends HttpServlet {
 		int anyos = Integer.parseInt(anyosStr);
 		int categoria = Integer.parseInt(categoriaStr);
 		Empleado empleado = new Empleado(nombre, dni, sexo, anyos, categoria);
-		Nomina nomina = new Nomina(Nomina.sueldo(empleado),dni);
+		Nomina nomina = new Nomina(Nomina.sueldo(empleado), dni);
 		empleadoDAO.actualizarEmpleado(empleado);
 		nominaDAO.actualizarNomina(nomina);
 		listarEmpleados(request, response);
 	}
 
-	private void actualizarEmpleado(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-			 {
+	private void actualizarEmpleado(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		EmpleadoDAO empleadoDAO = new EmpleadoDAO();
 		String dni = request.getParameter("dni");
 
 		Empleado empleado = empleadoDAO.extraerEmpleado(dni);
+
 		request.setAttribute("empleado", empleado);
 		Nomina nomina = NominaDAO.extraerNomina(dni);
 		request.setAttribute("nomina", nomina);
@@ -174,8 +176,5 @@ public class EmpleadoServlet extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/pages/nuevoEmpleado.jsp");
 		dispatcher.forward(request, response);
 	}
-	private void paginaError(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/pages/error.jsp");
-		dispatcher.forward(request, response);
-	}
+
 }

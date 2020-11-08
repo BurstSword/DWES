@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
- pageEncoding="UTF-8"%>
-<%@ page errorPage="/NominasFinalV2/WebContent/WEB-INF/pages/error.jsp" %>    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+ pageEncoding="UTF-8"%>    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -63,7 +62,7 @@ margin-bottom: 25px;
                                      <td>
                                         <c:out value="${empleado.categoria}" />
                                     </td>
-                                    <td><a href="/NominasFinalV2/EmpleadoServlet?action=editar&dni=${empleado.dni}">Editar</a> &nbsp;&nbsp;&nbsp;&nbsp; <a id="btnRemove"  href="/NominasFinalV2/EmpleadoServlet?action=eliminar&dni=${empleado.dni}">Eliminar</a></td>
+                                    <td><a href="/NominasFinalV2/EmpleadoServlet?action=editar&dni=${empleado.dni}">Editar</a>  &nbsp;&nbsp;&nbsp;&nbsp; <a id="btnRemove"  href="/NominasFinalV2/EmpleadoServlet?action=eliminar&dni=${empleado.dni}">Eliminar</a></td>
                                 </tr>
                             </c:forEach>
                             </tbody>

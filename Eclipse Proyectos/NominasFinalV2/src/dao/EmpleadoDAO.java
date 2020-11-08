@@ -65,12 +65,15 @@ public class EmpleadoDAO {
 		List<Empleado> empleados = new ArrayList<>();
 
 		try {
+			
 			connection = getDBConnection();
-
+			
 			preparedStatement = connection.prepareStatement(listarEmpleados);
-
+			
+			
 			rs = preparedStatement.executeQuery();
 
+			
 			while (rs.next()) {
 				String nombre = rs.getString("nombre");
 				String dni = rs.getString("dni");

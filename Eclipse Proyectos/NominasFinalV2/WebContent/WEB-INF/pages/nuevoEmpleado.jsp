@@ -39,7 +39,7 @@
                         </fieldset>
 
                         <fieldset class="form-group">
-                            <label>Años</label> <input pattern="[0-9]" class="form-control" name="categoria">
+                            <label>Años</label> <input pattern="[0-9]{1-2}" class="form-control" name="categoria">
                         </fieldset>
 
                         <fieldset class="form-group">
