@@ -33,9 +33,8 @@
       <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
-    <orderEntry type="jdk" jdkName="15" jdkType="JavaSDK" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.49" level="project" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
@@ -49,5 +48,6 @@
         <jarDirectory url="file://$USER_HOME$/Downloads/Librerias del proyecto" recursive="false" type="SOURCES" />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.49" level="project" />
   </component>
 </module>
