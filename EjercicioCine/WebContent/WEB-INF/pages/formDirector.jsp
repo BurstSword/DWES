@@ -9,7 +9,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-md navbar-dark" style="background-color: lightblue">
-                <a href="/EjercicioCine/PeliculaServlet?action=inicio" class="text-dark" style="font-size: 25px;">Volver</a>
+                <a href="/EjercicioCine/PeliculaServlet?action=inicioDefecto" class="text-dark" style="font-size: 25px;">Volver</a>
                
                     <div class="container">
                       <h1 class="text-center">Cine</h1>   

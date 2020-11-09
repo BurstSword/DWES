@@ -8,7 +8,7 @@
 <title>Cine</title>
 </head>
 <body>
-<form method="post" action="/EjercicioCine/PeliculaServlet?action=inicio">
+<form method="POST" action="/EjercicioCine/PeliculaServlet?action=inicio">
 <label>Nombre: </label> <input type="text" name="nombre" required="required">
 <label>Contraseña: </label> <input type="text" name="contrasena" required="required">
 <input type="submit" value="Buscar" class="btn btn-success">

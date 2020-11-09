@@ -24,7 +24,8 @@
 <a class="btn btn-warning mt-3" href="/EjercicioCine/PeliculaServlet?action=login">Login</a>
 </c:if>
 <c:if test="${logeado}">
-<a class="btn btn-warning mt-3" href="/EjercicioCine/PeliculaServlet?action=nuevo">Nuevo admin</a>
+<a class="btn btn-warning mt-3" href="/EjercicioCine/PeliculaServlet?action=nuevoAdmin">Nuevo admin</a>
+<a class="btn btn-warning mt-3" href="/EjercicioCine/PeliculaServlet?action=gestionPeliculas">GestionarPeliculas</a>
 </c:if>
 
 
