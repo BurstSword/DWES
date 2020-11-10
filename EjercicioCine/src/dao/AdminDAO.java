@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import modelo.Admin;
+import modelo.Pelicula;
 
 
 public class AdminDAO {
@@ -17,6 +18,8 @@ private static Connection dbConnection;
 	
 
 	private static final String extraerYComprobarUsuarios = "select * from admin";
+	private static final String insertarAdmin = "INSERT INTO admin"
+			+ "  (nombre, contrasena) VALUES " + " (?, ?);";
 	
 
 	public static Connection getDBConnection() {
@@ -62,5 +65,19 @@ private static Connection dbConnection;
 			e.printStackTrace();
 		}
 		return admins;
+	}
+public  void insertarAdmin(Admin admin) throws SQLException {
+
+		
+		try {
+			Connection connection = getDBConnection();
+			PreparedStatement preparedStatement = connection.prepareStatement(insertarAdmin);
+			preparedStatement.setString(1, admin.getNombre());
+			preparedStatement.setString(2, admin.getContrasena());
+			
+			preparedStatement.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("Error al insertar el admin");
+		}
 	}
 }

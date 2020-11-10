@@ -45,7 +45,7 @@ public class PeliculaServlet extends HttpServlet {
 			break;
 		case "gestionPeliculas":
 			try {
-				listarPeliculasSinDirector(request,response);
+				listarPeliculasSinDirector(request, response);
 			} catch (SQLException | IOException | ServletException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
@@ -53,6 +53,26 @@ public class PeliculaServlet extends HttpServlet {
 			break;
 		case "inicio":
 			paginaInicio(request, response);
+			break;
+		case "nuevoAdmin":
+			paginaNuevoAdmin(request, response);
+			break;
+		case "insertarPelicula":
+			try {
+				insertarPelicula(request, response);
+			} catch (SQLException | IOException | ServletException e2) {
+				// TODO Auto-generated catch block
+				e2.printStackTrace();
+			}
+			break;
+		case "nuevaPelicula":
+			try {
+				paginaInsertarPelicula(request, response);
+			} catch (IOException | ServletException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			break;
 		case "formDirector":
 			paginaConsulta(request, response);
 		case "login":
@@ -65,12 +85,20 @@ public class PeliculaServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-			
+
 		case "inicioDefecto":
-			paginaInicioDefecto(request,response);
+			paginaInicioDefecto(request, response);
+			break;
+		case "eliminar":
+			try {
+				eliminarPelicula(request, response);
+			} catch (SQLException | IOException | ServletException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			break;
 		}
-			
+
 	}
 
 	/**
@@ -85,7 +113,15 @@ public class PeliculaServlet extends HttpServlet {
 
 		case "login":
 			paginaLogin(request, response);
-
+			break;
+		case "insertarAdmin":
+			try {
+				insertarAdmin(request, response);
+			} catch (SQLException | IOException | ServletException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			break;
 		}
 		doGet(request, response);
 	}
@@ -105,17 +141,15 @@ public class PeliculaServlet extends HttpServlet {
 		String nombre = request.getParameter("nombre");
 		String contrasena = request.getParameter("contrasena");
 		List<Admin> admins = admindao.listarAdmins();
-		
+
 		for (int i = 0; i < admins.size(); i++) {
 
-			
-				if (nombre.equals(admins.get(i).getNombre()) && contrasena.equals(admins.get(i).getContrasena())) {
-					logged = true;
-				}
-				
-			
+			if (nombre.equals(admins.get(i).getNombre()) && contrasena.equals(admins.get(i).getContrasena())) {
+				logged = true;
+			}
+
 		}
-		
+
 		if (logged == true) {
 			request.setAttribute("logeado", logged);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
@@ -160,6 +194,14 @@ public class PeliculaServlet extends HttpServlet {
 		dispatcher.forward(request, response);
 
 	}
+	private void paginaNuevoAdmin(HttpServletRequest request, HttpServletResponse response)
+			throws IOException, ServletException {
+
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/pages/nuevoAdmin.jsp");
+		dispatcher.forward(request, response);
+
+	}
+
 	private void paginaInicioDefecto(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
 
@@ -167,11 +209,18 @@ public class PeliculaServlet extends HttpServlet {
 		dispatcher.forward(request, response);
 
 	}
-	
+
+	private void paginaInsertarPelicula(HttpServletRequest request, HttpServletResponse response)
+			throws IOException, ServletException {
+
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/pages/nuevaPelicula.jsp");
+		dispatcher.forward(request, response);
+
+	}
+
 	private void listarPeliculasSinDirector(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
 
-		
 		PeliculaDAO peliculaDAO = new PeliculaDAO();
 		List<Pelicula> peliculas = peliculaDAO.listarPeliculas();
 		if (peliculas.isEmpty()) {
@@ -185,14 +234,42 @@ public class PeliculaServlet extends HttpServlet {
 		}
 
 	}
-	private void eliminarEmpleado(HttpServletRequest request, HttpServletResponse response)
+
+	private void eliminarPelicula(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
 		PeliculaDAO peliculaDAO = new PeliculaDAO();
-		
+
 		String titulo = request.getParameter("titulo");
 		peliculaDAO.eliminarPelicula(titulo);
 		listarPeliculasSinDirector(request, response);
 
 	}
-	
+
+	private void insertarPelicula(HttpServletRequest request, HttpServletResponse response)
+			throws SQLException, IOException, ServletException {
+		PeliculaDAO peliculaDAO = new PeliculaDAO();
+		String director = request.getParameter("director");
+		String titulo = request.getParameter("titulo");
+		String fecha = request.getParameter("fecha");
+
+		Pelicula pelicula = new Pelicula(director, titulo, fecha);
+		peliculaDAO.insertarPelicula(pelicula);
+
+		listarPeliculasSinDirector(request, response);
+
+	}
+	private void insertarAdmin(HttpServletRequest request, HttpServletResponse response)
+			throws SQLException, IOException, ServletException {
+		AdminDAO adminDAO = new AdminDAO();
+		String nombre = request.getParameter("nombre");
+		String contrasena = request.getParameter("contrasena");
+		
+
+		Admin admin = new Admin(nombre, contrasena);
+		adminDAO.insertarAdmin(admin);
+
+		paginaInicioDefecto(request,response);
+
+	}
+
 }

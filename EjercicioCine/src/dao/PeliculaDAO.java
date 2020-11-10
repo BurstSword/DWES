@@ -18,7 +18,9 @@ public class PeliculaDAO {
 
 	private static final String extraerPeliculaPorDirector = "select * from pelicula where director =?";
 	private static final String listarPeliculas = "select * from pelicula";
-	private static final String eliminarPelicula = "delete from pelicula where director=?";
+	private static final String eliminarPelicula = "delete from pelicula where titulo=?";
+	private static final String insertarPelicula = "INSERT INTO pelicula"
+			+ "  (director, titulo, fecha) VALUES " + " (?, ?, ?);";
 	
 
 	public static Connection getDBConnection() {
@@ -110,5 +112,20 @@ public class PeliculaDAO {
     }finally {
     	
     }
+	}
+	
+public  void insertarPelicula(Pelicula pelicula) throws SQLException {
+
+		
+		try {
+			Connection connection = getDBConnection();
+			PreparedStatement preparedStatement = connection.prepareStatement(insertarPelicula);
+			preparedStatement.setString(1, pelicula.getDirector());
+			preparedStatement.setString(2, pelicula.getTitulo());
+			preparedStatement.setString(3, pelicula.getFecha());
+			preparedStatement.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("Error al insertar el empleado");
+		}
 	}
 }

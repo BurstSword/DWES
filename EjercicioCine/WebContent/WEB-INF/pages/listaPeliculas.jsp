@@ -15,10 +15,10 @@ margin-bottom: 25px;
 <body>
 <div class="">
                 <nav class="navbar navbar-expand-md navbar-dark" style="background-color: lightblue">
-                <a href="/NominasFinalV2/EmpleadoServlet?action=menu" class="text-dark" style="font-size: 25px;">Volver</a>
+                <a href="/EjercicioCine/PeliculaServlet?action=inicioDefecto" class="text-dark" style="font-size: 25px;">Volver</a>
                
                     <div class="container">
-                      <h1 class="text-center">Gestión de nominas</h1>   
+                      <h1 class="text-center">Cine Gueno</h1>   
                       
                     </div>
                 </nav>
@@ -27,10 +27,10 @@ margin-bottom: 25px;
             
 
                 <div class="container ">
-                    <h3 class="text-center">Lista de empleados</h3>
+                    <h3 class="text-center">Lista de películas</h3>
                       
                     <hr>
-                    <a id="btnNuevo" class="btn btn-primary float-right" href="/NominasFinalV2/EmpleadoServlet?action=nuevoEmpleado">Nuevo empleado</a>
+                    <a id="btnNuevo" class="btn btn-primary float-right" href="/EjercicioCine/PeliculaServlet?action=nuevaPelicula">Nueva película</a>
                    
 <table class="table table-bordered text-center">
                         <thead class="thead-dark">
@@ -54,7 +54,7 @@ margin-bottom: 25px;
                                     <td>
                                         <c:out value="${pelicula.fecha}" />
                                     </td>       
-                                    <td><a href="/EjercicioCine/PeliculaServlet?action=editar&titulo=${pelicula.titulo}">Editar</a>  &nbsp;&nbsp;&nbsp;&nbsp; <a id="btnRemove"  href="/EjercicioCine/PeliculaServlet?action=eliminar&dni=${pelicula.titulo}">Eliminar</a></td>
+                                    <td><a href="/EjercicioCine/PeliculaServlet?action=editar&titulo=${pelicula.titulo}">Editar</a>  &nbsp;&nbsp;&nbsp;&nbsp; <a id="btnRemove"  href="/EjercicioCine/PeliculaServlet?action=eliminar&titulo=${pelicula.titulo}">Eliminar</a></td>
                                 </tr>
                             </c:forEach>
                             </tbody>
