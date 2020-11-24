@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+C:\Users\usuario\Desktop\2º DAW Miguel\DWES\ToolSuiteProjects\.metadata\.plugins\org.eclipse.jdt.core
+757072999.index
+4033535409.index
+1339039484.index
+903661093.index

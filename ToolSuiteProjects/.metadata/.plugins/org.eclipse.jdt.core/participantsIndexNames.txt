@@ -1,0 +1,3 @@
+INDEX VERSION 1.131
+C:\Users\usuario\Desktop\2º DAW Miguel\DWES\ToolSuiteProjects\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4194665518.index
+\PracticaGuiada\target\generated-sources\annotations
