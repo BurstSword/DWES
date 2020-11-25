@@ -25,12 +25,15 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="com.miguel.springapp"/>
 			<item value="Guiada.PracticaGuiada"/>
 		</list>
 		<list key="groupId">
+			<item value="com.miguel"/>
 			<item value="Guiada"/>
 		</list>
 		<list key="artifactId">
+			<item value="springapp"/>
 			<item value="PracticaGuiada"/>
 		</list>
 		<list key="projectNameTemplate">
