@@ -9,10 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8320f8c0-1dfe-4f71-b15c-50c29d3d6db1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NominasSpring.iml" beforeDir="false" afterPath="$PROJECT_DIR$/NominasSpring.iml" afterDir="false" />
-    </list>
+    <list default="true" id="8320f8c0-1dfe-4f71-b15c-50c29d3d6db1" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -315,9 +312,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1010" y="168" key="com.intellij.javaee.view.ServerArtifactsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604762102836" />
-    <state x="392" y="50" key="new project wizard" timestamp="1604916557200">
+    <state x="392" y="50" key="new project wizard" timestamp="1606372616485">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="392" y="50" key="new project wizard/0.0.1366.728/-1366.0.1366.728@0.0.1366.728" timestamp="1606372616485" />
     <state x="392" y="50" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1604916557200" />
     <state x="551" y="171" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1604750599793" />
     <state x="568" y="203" key="spring file set editor" timestamp="1604751622790">
