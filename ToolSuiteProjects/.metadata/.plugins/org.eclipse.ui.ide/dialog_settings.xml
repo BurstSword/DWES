@@ -55,6 +55,8 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\usuario\Desktop\2º DAW Miguel\DWES\empresa"/>
+			<item value="C:\Users\usuario\Desktop\2º DAW Miguel\DWES\empresa-2.0.0"/>
 			<item value="C:\Users\usuario\Desktop\2º DAW Miguel\DWES\ToolSuiteProjects\PracticaGuiada"/>
 		</list>
 	</section>
