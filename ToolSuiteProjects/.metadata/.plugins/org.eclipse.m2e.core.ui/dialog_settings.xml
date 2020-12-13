@@ -25,6 +25,7 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="com.miguel.nominas"/>
 			<item value="com.miguel.springapp"/>
 			<item value="Guiada.PracticaGuiada"/>
 		</list>
@@ -33,6 +34,7 @@
 			<item value="Guiada"/>
 		</list>
 		<list key="artifactId">
+			<item value="nominas"/>
 			<item value="springapp"/>
 			<item value="PracticaGuiada"/>
 		</list>
@@ -45,6 +47,7 @@
 			<item value="[name]"/>
 		</list>
 		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
 			<item value="1.0"/>
 		</list>
 	</section>

@@ -17,7 +17,7 @@
 			class="text-dark" style="font-size: 25px;">Volver</a>
 
 		<div class="container">
-			<h1 class="text-center">Gestión de nominas</h1>
+			<h1 class="text-center">Gestión de nóminas</h1>
 		</div>
 	</nav>
 	<br>

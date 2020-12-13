@@ -1308,3 +1308,13 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact org.hibernate
 2020-11-30 13:09:21,467 [Worker-34: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\usuario\Desktop\2º DAW Miguel\DWES\empresa\src\main\resources
 2020-11-30 13:09:21,468 [Worker-34: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2020-11-30 13:09:21,477 [Worker-34: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\usuario\Desktop\2º DAW Miguel\DWES\empresa\src\test\resources
+2020-12-13 11:43:35,594 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-12-13 11:47:35,632 [Worker-8: Creating maven-archetype-webapp] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Collecting project info '/pom.xml' C:\Users\Ryu\Desktop\2º DAW\DWES\ToolSuiteProjects\nominas\pom.xml
+2020-12-13 11:47:36,921 [Worker-8: Creating maven-archetype-webapp] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.miguel:nominas:0.0.1-SNAPSHOT @ C:\Users\Ryu\Desktop\2º DAW\DWES\ToolSuiteProjects\nominas\pom.xml.
+2020-12-13 11:47:38,351 [Worker-8: Creating maven-archetype-webapp] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /nominas/src/main/java
+2020-12-13 11:47:38,352 [Worker-8: Creating maven-archetype-webapp] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /nominas/src/test/java
+2020-12-13 11:47:43,853 [Worker-8: Creating maven-archetype-webapp] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 8 sec
+2020-12-13 11:47:45,027 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-12-13 11:47:45,028 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Ryu\Desktop\2º DAW\DWES\ToolSuiteProjects\nominas\src\main\resources
+2020-12-13 11:47:45,032 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-12-13 11:47:45,032 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Ryu\Desktop\2º DAW\DWES\ToolSuiteProjects\nominas\src\test\resources
