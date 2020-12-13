@@ -1,6 +1,0 @@
-springmvc\controller\Controlador.class
-springmvc\service\EmpleadoServiceImpl.class
-springmvc\entity\Nomina.class
-springmvc\service\EmpleadoService.class
-springmvc\entity\Empleado.class
-springmvc\repository\EmpleadoRepository.class
