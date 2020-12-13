@@ -31,7 +31,7 @@ public class Controlador {
 	@GetMapping("/lista")
 	public String listaEmpleados(Model model) {
 
-		List<Empleado> empleados = empleadoService.listaEmpleados();
+		List<Empleado> empleados = empleadoService.listarEmpleados();
 
 		model.addAttribute("empleados", empleados);
 
@@ -53,7 +53,7 @@ public class Controlador {
 
 		int sueldo;
 
-		if (empleado.getNomina().getDni().isEmpty()) {
+		if (empleado.getNomina().getDni()==null|| empleado.getNomina().getDni().isEmpty()) {
 			Nomina nomina = new Nomina();
 
 			sueldo = nomina.sueldo(empleado.getCategoria(), empleado.getAntiguedad());
@@ -77,7 +77,7 @@ public class Controlador {
 	@GetMapping("/actualizar")
 	public String recogerEmpleado(@RequestParam("empleadoId") int id, Model model) {
 
-		Empleado empleado = empleadoService.recogerEmpleado(id);
+		Empleado empleado = empleadoService.traerEmpleado(id);
 
 		model.addAttribute("empleado", empleado);
 
@@ -95,10 +95,14 @@ public class Controlador {
 	@PostMapping("/sueldo")
 	public String pruebaEmpleado(@RequestParam("dni") String dni, Model model) {
 
-		Nomina nomina = empleadoService.recogerSueldo(dni);
+		Nomina nomina = empleadoService.traerSueldo(dni);
 
-		model.addAttribute("nombre", nomina.getEmpleado().getNombre());
-		model.addAttribute("sueldo", nomina.getSueldo());
+		if(nomina!=null) {
+			model.addAttribute("nombre", nomina.getEmpleado().getNombre());
+			model.addAttribute("sueldo", nomina.getSueldo());
+		}else {
+			return "error";
+		}
 
 		return "pagina-principal";
 	}

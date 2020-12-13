@@ -8,8 +8,8 @@ import java.util.Optional;
 
 public interface EmpleadoService {
 
-    public Pelicula recogerEmpleado(int id);
-    public Nomina recogerSueldo(String dni);
+    public Pelicula traerEmpleado(int id);
+    public Nomina traerSueldo(String dni);
     public List<Pelicula> listaEmpleados();
     public void guardarEmpleado(Pelicula empleado);
     public void eliminarEmpleado(int id);

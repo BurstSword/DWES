@@ -19,7 +19,7 @@ public class EmpleadoServiceImpl implements EmpleadoService{
 
     @Override
     @Transactional
-    public Empleado recogerEmpleado(int id) {
+    public Empleado traerEmpleado(int id) {
     	Optional <Empleado> optionalEmpleado = empleadoRepository.findById(id);
     	
     	Empleado empleado = optionalEmpleado.get();
@@ -29,14 +29,14 @@ public class EmpleadoServiceImpl implements EmpleadoService{
 
     @Override
     @Transactional
-    public Nomina recogerSueldo(String dni) {
+    public Nomina traerSueldo(String dni) {
 
         return empleadoRepository.getNomina(dni);
     }
 
     @Override
     @Transactional
-    public List<Empleado> listaEmpleados() {
+    public List<Empleado> listarEmpleados() {
 
         return empleadoRepository.findAll();
     }

@@ -77,7 +77,7 @@ public class Controlador {
 	@GetMapping("/actualizar")
 	public String recogerEmpleado(@RequestParam("empleadoId") int id, Model model) {
 
-		Pelicula empleado = empleadoService.recogerEmpleado(id);
+		Pelicula empleado = empleadoService.traerEmpleado(id);
 
 		model.addAttribute("empleado", empleado);
 
@@ -95,7 +95,7 @@ public class Controlador {
 	@PostMapping("/sueldo")
 	public String pruebaEmpleado(@RequestParam("dni") String dni, Model model) {
 
-		Nomina nomina = empleadoService.recogerSueldo(dni);
+		Nomina nomina = empleadoService.traerSueldo(dni);
 
 		model.addAttribute("nombre", nomina.getEmpleado().getNombre());
 		model.addAttribute("sueldo", nomina.getSueldo());
