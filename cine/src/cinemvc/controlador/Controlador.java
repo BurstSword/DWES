@@ -33,19 +33,13 @@ public class Controlador {
 	@GetMapping("/lista")
 	public String listaPeliculas(@RequestParam("director") String director, Model model) {
 		List<Pelicula> peliculas = servicio.buscarPelicula(director);
-		model.addAttribute("peliculas", peliculas);
-
-		for(Pelicula pelicula:peliculas) {
-			if(pelicula.getDirector().equals(director)) {
-				
-				model.addAttribute("director", pelicula.getDirector());
-				model.addAttribute("titulo", pelicula.getTitulo());
-				model.addAttribute("fecha", pelicula.getFecha());
-				
+		
+			if(peliculas!=null) {
+				model.addAttribute("peliculas", peliculas);
 			}else {
 				return "paginaError";
 			}
-		}
+		
 		return "/lista";
 		
 	}
