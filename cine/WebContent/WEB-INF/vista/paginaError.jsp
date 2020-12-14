@@ -19,12 +19,12 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-md navbar-dark">
-                <a href="paginaPrincipal"><img src="./back.png"></a>
+                
                 </nav>
                 <div class="container">
-                <h1>Error 418</h1>
-                <h3>Soy una tetera.</h3>
-                <p>Has intentado hacer café en una tetera.</p>
+                <h1>Error 400 y algo</h1>
+                <h3>Algo no fue bien mi amigo</h3>
+                <p>Vuelve a intentarlo</p>
                 </div>
 
 </body>

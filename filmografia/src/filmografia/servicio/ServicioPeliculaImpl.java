@@ -33,6 +33,7 @@ public class ServicioPeliculaImpl implements ServicioPelicula{
 	@Override
 	@Transactional
 	public void guardarPelicula(Pelicula pelicula) {
+		
 		repositorio.save(pelicula);
 	}
 

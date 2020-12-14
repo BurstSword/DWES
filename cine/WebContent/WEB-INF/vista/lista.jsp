@@ -8,14 +8,7 @@
 <title>Buscar películas por director</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <style>
-	.thead{
-		color: #fff;
-		background-color:#2e5d94;
-	}
-	.btn{
-		color: #fff;
-		background-color:#2e5d94;
-	}
+	
 </style>
 </head>
 <body>
@@ -33,7 +26,6 @@
 								<th>Director</th>
                                 <th>Título</th>
                                 <th>Fecha</th>
-                                <th>Acciones</th>
                                 <th colspan="2">Acciones</th>
                             </tr>
                         </thead>

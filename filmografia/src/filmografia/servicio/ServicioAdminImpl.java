@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import filmografia.entidades.Admin;
 import filmografia.entidades.Director;
 import filmografia.repositorio.AdminRepositorio;
-import filmografia.repositorio.DirectoresRepositorio;
+
 
 @Service
 public class ServicioAdminImpl implements ServicioAdmin {

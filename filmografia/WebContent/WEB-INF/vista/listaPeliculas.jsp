@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Lista Películas</title>
+<title>Buscar películas por director</title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <style>
@@ -31,22 +31,38 @@
 				<thead class="thead">
 					<tr>
 						<th>Director</th>
+						<th>Título</th>
+						<th>Fecha</th>
+						<th colspan="2">Acciones</th>
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach var="director" items="${directores}">
+					<c:forEach var="pelicula" items="${peliculas}">
+
+						<c:url var="actualizar" value="actualizar">
+							<c:param name="id" value="${pelicula.id}"></c:param>
+						</c:url>
+
+						<c:url var="eliminar" value="eliminar">
+							<c:param name="id" value="${pelicula.id}"></c:param>
+						</c:url>
 
 						<tr>
-							<td><c:out value="${director.nombre}" /></td>
+							<td><c:out value="${pelicula.director}" /></td>
+							<td><c:out value="${pelicula.titulo}" /></td>
+							<td><c:out value="${pelicula.fecha}" /></td>
+							<td colspan="2" id="acc"><a href=${actualizar }
+								class="btn btn-warning">Actualizar</a> <a href=${eliminar }
+								class="btn btn-danger"
+								onclick="if (!(confirm('¿Seguro que quieres eliminar a ${pelicula.titulo}?'))) return false">Eliminar</a>
+							</td>
 						</tr>
 					</c:forEach>
 				</tbody>
 
 			</table>
-			<a href="paginaPrincipal" class="btn btn-info">Volver a consultar</a>
-			<a href="paginaPrincipal" class="btn btn-info">Inicio</a>
 		</div>
-
+<a href="formulario" class="btn btn-warning">Nueva Película</a>
 	</div>
 </body>
 </html>

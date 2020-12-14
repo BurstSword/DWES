@@ -20,6 +20,9 @@
 				<c:if test="${!logged}">
 					<a href="login" class="btn btn-info">Login</a>
 				</c:if>
+				<c:if test="${logged}">
+					<a href="logout" class="btn btn-info">Logout</a>
+				</c:if>
 				
 			</div>
 			<a href="info" class="text-dark" style="font-size: 25px;">Info</a>
@@ -37,16 +40,17 @@
 				</div>
 			</form>
 			<div></div>
-			<c:if test="${logged}">
+			
+
+
+		</div>
+		<c:if test="${logged}">
 				<a class="btn btn-warning mt-3"
 					href="nuevoAdmin">Nuevo
 					admin</a>
 				<a class="btn btn-warning mt-3"
 					href="listarPeliculasAdmin">GestionarPeliculas</a>
 			</c:if>
-
-
-		</div>
 	</div>
 </body>
 </html>
