@@ -13,7 +13,7 @@
                 <a href="/EjercicioCine/PeliculaServlet?action=inicioDefecto" class="text-dark" style="font-size: 25px;">Volver</a>
                
                     <div class="container">
-                      <h1 class="text-center">Cine</h1>   
+                      <h1 class="text-center">Cine Güeno 2.0</h1>   
                       
                     </div>
                 </nav>
