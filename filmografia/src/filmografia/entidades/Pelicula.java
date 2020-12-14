@@ -1,7 +1,11 @@
 package filmografia.entidades;
 
 import javax.persistence.*;
-
+/**
+ * Clase que referencia la tabla película en la base de datos.
+ * @author usuario
+ *
+ */
 @Entity
 @Table(name = "pelicula")
 public class Pelicula {

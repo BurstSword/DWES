@@ -2,6 +2,11 @@ package filmografia.entidades;
 
 import javax.persistence.*;
 
+/**
+ * Clase que referencia la tabla Admin de la base de datos
+ * @author usuario
+ *
+ */
 @Entity
 @Table(name = "admin")
 public class Admin {

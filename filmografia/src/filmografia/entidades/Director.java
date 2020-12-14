@@ -1,13 +1,15 @@
 package filmografia.entidades;
 
-import javax.persistence.*;
+/**
+ * Clase director con atributo nombre
+ * @author usuario
+ *
+ */
 
-@Entity
-@Table(name = "directores")
+
 public class Director {
 
-	@Column(name = "nombre")
-	@Id
+	
 	private String nombre;
 
 	public Director() {

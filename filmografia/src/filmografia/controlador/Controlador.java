@@ -18,7 +18,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import filmografia.entidades.*;
 import filmografia.servicio.*;
-
+/**
+ * Clase controladora que se encagarga de conectas los jsp con la base de datos.
+ * @author usuario
+ *
+ */
 @Controller
 @RequestMapping("/controlador")
 public class Controlador {
@@ -33,6 +37,12 @@ public class Controlador {
 	@Autowired
 	private ServicioAdmin servicioAdmin;
 
+	/**
+	 * Redirección a la página principal
+	 * @param model
+	 * @param request
+	 * @return
+	 */
 	@GetMapping("/paginaPrincipal")
 	public String paginaPrincipal(Model model,HttpServletRequest request) {
 
@@ -42,6 +52,13 @@ public class Controlador {
 		return "paginaPrincipal";
 	}
 
+	/**
+	 * Redirección a la lista de directores buscados
+	 * @param director
+	 * @param model
+	 * @param request
+	 * @return
+	 */
 	@GetMapping("/lista")
 	public String listaPeliculas(@RequestParam("director") String director, Model model,HttpServletRequest request) {
 		List<Pelicula> peliculas = servicioPeliculas.buscarPeliculaPorDirector(director);
@@ -60,6 +77,11 @@ public class Controlador {
 
 	}
 
+	/**
+	 * Redirección al formulario para introducir una nueva película
+	 * @param model
+	 * @return
+	 */
 	@GetMapping("/formulario")
 	public String crearPelicula(Model model) {
 
@@ -70,6 +92,12 @@ public class Controlador {
 		return "formulario";
 	}
 
+	/**
+	 * Redirección a la página formulario con una película para editar sus datos
+	 * @param id
+	 * @param model
+	 * @return
+	 */
 	@GetMapping("/actualizar")
 	public String actualizarPelicula(@RequestParam("id") int id, Model model) {
 
@@ -80,6 +108,11 @@ public class Controlador {
 		return "formulario";
 	}
 
+	/**
+	 * Método que se encarga de guardar una película nueva o actualizar una existente
+	 * @param pelicula
+	 * @return
+	 */
 	@PostMapping("/guardarPelicula")
 	public String guardar(@ModelAttribute("pelicula") Pelicula pelicula) {
 		boolean existe = false;
@@ -104,6 +137,11 @@ public class Controlador {
 		return "redirect:/controlador/paginaPrincipal";
 	}
 
+	/**
+	 * Método que se encarga de eliminar una película
+	 * @param id
+	 * @return
+	 */
 	@GetMapping("/eliminar")
 	public String eliminarEmpleado(@RequestParam("id") int id) {
 
@@ -112,24 +150,45 @@ public class Controlador {
 		return "redirect:/controlador/paginaPrincipal";
 	}
 
+	/**
+	 * Redirección a la página info
+	 * @return
+	 */
 	@GetMapping("/info")
 	public String irAInfo() {
 
 		return "info";
 	}
 
+	/**
+	 * Redirección a la lista de directores consultados
+	 * @param model
+	 * @return
+	 */
 	@GetMapping("/listaDirectoresConsultados")
 	public String listaDirectores(Model model) {
 		
 		return "listaDirectores";
 	}
 
+	/**
+	 * Redirección a la pagina de login
+	 * @param model
+	 * @return
+	 */
 	@GetMapping("/login")
 	public String irLogin(Model model) {
 
 		return "login";
 	}
 
+	/**
+	 * Método que se encarga de loggear al usuario
+	 * @param nombre
+	 * @param pass
+	 * @param request
+	 * @return
+	 */
 	@GetMapping("/logger")
 	public String log(@RequestParam("nombre") String nombre, @RequestParam("pass") String pass,HttpServletRequest request) {
 		sesion=request.getSession();
@@ -148,6 +207,11 @@ public class Controlador {
 		return "redirect:/controlador/paginaPrincipal";
 	}
 
+	/**
+	 * Listado de películas
+	 * @param model
+	 * @return
+	 */
 	@GetMapping("/listarPeliculasAdmin")
 	public String listarPelis(Model model) {
 		List<Pelicula> peliculas = servicioPeliculas.listarPeliculas();
@@ -155,6 +219,11 @@ public class Controlador {
 		return "listaPeliculas";
 	}
 
+	/**
+	 * Nuevo admin en la BBDD
+	 * @param model
+	 * @return
+	 */
 	@GetMapping("/nuevoAdmin")
 	public String nuevoAdmin(Model model) {
 
@@ -164,6 +233,11 @@ public class Controlador {
 		return "formularioAdmin";
 	}
 
+	/**
+	 * Inserta el nuevo admin
+	 * @param admin
+	 * @return
+	 */
 	@PostMapping("/insertarAdmin")
 	public String insertarAdmin(@ModelAttribute("admin") Admin admin) {
 
@@ -172,6 +246,12 @@ public class Controlador {
 		return "redirect:/controlador/paginaPrincipal";
 	}
 
+	/**
+	 * Método que se encarga de desloggear
+	 * @param model
+	 * @param request
+	 * @return
+	 */
 	@GetMapping("/logout")
 	public String Logout(Model model,HttpServletRequest request) {
 		sesion=request.getSession();

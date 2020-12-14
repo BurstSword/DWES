@@ -10,13 +10,20 @@ import filmografia.entidades.Admin;
 import filmografia.entidades.Director;
 import filmografia.repositorio.AdminRepositorio;
 
-
+/**
+ * Clase que opera con la tabla Admin de la bbdd
+ * @author usuario
+ *
+ */
 @Service
 public class ServicioAdminImpl implements ServicioAdmin {
 
 	@Autowired
 	AdminRepositorio repositorio;
 
+	/**
+	 * Lista los Admins de la base de datos.
+	 */
 	@Override
 	@Transactional
 	public List<Admin> listarAdmins() {
@@ -24,6 +31,9 @@ public class ServicioAdminImpl implements ServicioAdmin {
 		return admins;
 	}
 
+	/**
+	 * Introduce un admin en la base de datos.
+	 */
 	@Override
 	@Transactional
 	public void introducirAdmin(Admin admin) {

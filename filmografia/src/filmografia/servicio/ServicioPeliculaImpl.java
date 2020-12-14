@@ -10,12 +10,20 @@ import java.util.Optional;
 import filmografia.entidades.Pelicula;
 import filmografia.repositorio.FilmografiaRepositorio;
 
+/**
+ * Clase que conecta con la tabla Pelicula de la base de datos
+ * @author usuario
+ *
+ */
 @Service
 public class ServicioPeliculaImpl implements ServicioPelicula{
 
 	@Autowired
 	private FilmografiaRepositorio repositorio;
 	
+	/**
+	 * Busca películas por director
+	 */
 	@Override
 	@Transactional
 	public List<Pelicula> buscarPeliculaPorDirector(String director) {
@@ -25,11 +33,17 @@ public class ServicioPeliculaImpl implements ServicioPelicula{
 		
 	}
 
+	/**
+	 * Lista todas las películas de la base de datos
+	 */
 	@Override
 	public List<Pelicula> listarPeliculas() {
 		return repositorio.findAll();
 	}
 
+	/**
+	 * Guarda una película en la base de datos
+	 */
 	@Override
 	@Transactional
 	public void guardarPelicula(Pelicula pelicula) {
@@ -37,11 +51,17 @@ public class ServicioPeliculaImpl implements ServicioPelicula{
 		repositorio.save(pelicula);
 	}
 
+	/**
+	 * Borra una película de la base de datos
+	 */
 	@Override
 	public void borrarPelicula(int id) {
 		repositorio.deleteById(id);
 	}
 
+	/**
+	 * Pide una película en específico de la base de datos
+	 */
 	@Override
 	public Pelicula pedirPelicula(int id) {
 		Optional <Pelicula> peliculaOp = repositorio.findById(id);
