@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Nominas</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+</head>
+<body>
+<div class="container bg-dark text-light pt-4 col-12">
+    <h2>Gestion de empleados</h2>
+</div>
+<div class="d-flex flex-column col-3">
+    <a class="btn btn-primary text-light btn-lg mt-4" th:href="@{/controlador/lista}">Lista
+        de empleados</a>
+
+    <form th:action="@{/controlador/sueldo}" method="POST">
+        <input type="submit" class="btn btn-success text-light btn-lg mt-4"
+               value="Buscar sueldo:"/> <input type="text"
+                                               placeholder="Introduce el dni" name="dni" class="form-control mt-3"/>
+        <div th:if="${nombre != null}">
+
+
+            <h3 th:text="'Nombre: ' + ${nombre}"></h3>
+            <h3 th:text="'Sueldo: ' + ${sueldo}"></h3>
+        </div>
+    </form>
+
+</div>
+</body>
+</html>

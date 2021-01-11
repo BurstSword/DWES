@@ -37,7 +37,7 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="D:\JetBrains\apps\IDEA-C\ch-0\202.7660.26\plugins\maven\lib\maven3" />
+        <option name="mavenHome" value="E:\Programas\ProgramasJetBrains\apps\IDEA-U\ch-0\202.7660.26\plugins\maven\lib\maven3" />
         <option name="usePluginRegistry" value="true" />
       </MavenGeneralSettings>
     </option>
@@ -56,38 +56,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../NominasSpringBoot" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.applicationServers" />
   </component>
   <component name="RunManager" selected="JUnit.All in NominasSpring">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
-      <deployment />
-      <server-settings />
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="All in NominasSpring" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="NominasSpring" />
       <option name="PACKAGE_NAME" value="" />
@@ -173,7 +148,9 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JavaScript Debug.index.jsp" />
       <item itemvalue="JUnit.All in NominasSpring" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.38" />
     </list>
     <recent_temporary>
       <list>
@@ -196,6 +173,7 @@
       <workItem from="1604752933740" duration="658000" />
       <workItem from="1604753630010" duration="7992000" />
       <workItem from="1604762440469" duration="687000" />
+      <workItem from="1610384870573" duration="53000" />
     </task>
     <servers />
   </component>
@@ -247,11 +225,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="809" y="228" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable/0.0.1920.1040@0.0.1920.1040" timestamp="1604761793023" />
-    <state x="560" y="232" key="FileChooserDialogImpl" timestamp="1604916519618">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="787" y="332" key="FileChooserDialogImpl" timestamp="1610384934649">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="560" y="232" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1604916519618" />
-    <state x="787" y="332" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604762379152" />
+    <state x="787" y="332" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1610384934649" />
     <state width="1293" height="280" key="GridCell.Tab.0.bottom" timestamp="1604763131398">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

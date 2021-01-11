@@ -1,28 +1,23 @@
-package controller;
+package com.nomina.nomina.controller;
 
-import java.util.List;
 
-import entity.Empleado;
-import entity.Nomina;
+import com.nomina.nomina.entity.Empleado;
+import com.nomina.nomina.entity.Nomina;
+import com.nomina.nomina.service.EmpleadoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 
-import service.EmpleadoService;
+import java.util.List;
 
 @Controller
+@RequestMapping("/controlador")
 public class Controlador {
 
 	@Autowired
 	private EmpleadoService empleadoService;
-
-	@GetMapping("/index")
-	public String Index() {
-
-		return "pagina-principal";
-	}
 
 	@GetMapping("/paginaPrincipal")
 	public String paginaPrincipal() {
