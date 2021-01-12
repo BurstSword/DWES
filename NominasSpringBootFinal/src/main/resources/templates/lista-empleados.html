@@ -31,17 +31,17 @@
         </tr>
         </thead>
         <tbody>
-            <tr th:each="empleado : ${empleados}" class="lead text-center">
-                <td th:text="${empleado.getNombre()}"></td>
-                <td th:text="${empleado.getDni()}"></td>
-                <td th:text="${empleado.getSexo()}"></td>
-                <td th:text="${empleado.getCategoria()}"></td>
-                <td th:text="${empleado.getAntiguedad()}"></td>
-                <td><a th:href="@{/actualizar}" class="btn btn-warning">Actualizar</a></td>
-                <td><a th:href="@{/eliminar}" class="btn btn-danger"
-                       onclick="if (!(confirm('¿Seguro que quieres eliminar a ${empleado.nombre}?'))) return false">Eliminar</a>
-                </td>
-            </tr>
+        <tr th:each="empleado : ${empleados}" class="lead text-center">
+            <td th:text="${empleado.getNombre()}"></td>
+            <td th:text="${empleado.getDni()}"></td>
+            <td th:text="${empleado.getSexo()}"></td>
+            <td th:text="${empleado.getCategoria()}"></td>
+            <td th:text="${empleado.getAntiguedad()}"></td>
+            <td><a th:href="@{/controlador/actualizar}" class="btn btn-warning">Actualizar</a></td>
+            <td><a th:href="@{/controlador/eliminar}" class="btn btn-danger"
+                   onclick="if (!(confirm('¿Seguro que quieres eliminar a ${empleado.nombre}?'))) return false">Eliminar</a>
+            </td>
+        </tr>
         </tbody>
     </table>
 </div>

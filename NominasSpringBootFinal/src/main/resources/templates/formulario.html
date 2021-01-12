@@ -14,32 +14,32 @@
 
 <div th:form class="container pt-5 f-flex">
     <h3>Formulario</h3>
-    <form class="pt-3 col-2" action="guardarEmpleado"
-          modelAttribute="empleado" method="POST"></form>
+    <form class="pt-3 col-2" action="#" th:action="@{/controlador/guardaEmpleado}"
+          th:modelAttribute="empleado" method="POST"></form>
 
 
     <h3 th:hidden th:value="id" ></h3>
-    <h3 th:hidden path="nomina.dni"></h3>
+    <h3 th:hidden th:value="nomina.dni"></h3>
 
         <div class="form-group d-flex flex-column">
             <label>Nombre:</label>
-            <f:input path="nombre"></f:input>
+            <input th:field="${empleado.getNombre()}"/>
         </div>
         <div class="form-group d-flex flex-column">
             <label>Dni:</label>
-            <f:input path="dni"></f:input>
+            <input th:field="${empleado.getDni()}"/>
         </div>
         <div class="form-group d-flex flex-column">
             <label>Sexo:</label>
-            <f:input path="sexo"></f:input>
+            <input th:field="${empleado.getSexo()}"/>
         </div>
         <div class="form-group d-flex flex-column">
             <label>Categoria:</label>
-            <f:input path="categoria"></f:input>
+            <input th:field="${empleado.getCategoria()}"/>
         </div>
         <div class="form-group d-flex flex-column">
             <label>Antiguedad:</label>
-            <f:input path="antiguedad"></f:input>
+            <input th:field="${empleado.getAntiguedad()}"/>
         </div>
 
         <input class="btn btn-success" type="submit" value="Guardar empleado">
