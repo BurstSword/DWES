@@ -5,11 +5,15 @@ import com.nomina.nomina.entity.Empleado;
 import com.nomina.nomina.entity.Nomina;
 import com.nomina.nomina.service.EmpleadoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -19,6 +23,13 @@ public class Controlador {
 	@Autowired
 	private EmpleadoService empleadoService;
 
+	@InitBinder
+	public void initBinder(WebDataBinder dataBinder) {
+		StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
+
+		dataBinder.registerCustomEditor(String.class, stringTrimmerEditor);
+
+	}
 	@GetMapping("/paginaPrincipal")
 	public String paginaPrincipal() {
 
@@ -46,34 +57,44 @@ public class Controlador {
 	}
 
 	@PostMapping("/guardarEmpleado")
-	public String guardar(@ModelAttribute("empleado") Empleado empleado) {
+	public String guardar(@Valid @ModelAttribute("empleado") Empleado empleado, BindingResult bindingResult, Model model) {
 
-		int sueldo;
+		if (bindingResult.hasErrors()) {
 
-		if (empleado.getNomina().getDni()==null|| empleado.getNomina().getDni().isEmpty()) {
-			Nomina nomina = new Nomina();
+			model.addAttribute("empleado", empleado);
 
-			sueldo = nomina.sueldo(empleado.getCategoria(), empleado.getAntiguedad());
-
-			nomina.setDni(empleado.getDni());
-			nomina.setSueldo(sueldo);
-
-			empleado.setNomina(nomina);
-			empleadoService.guardarEmpleado(empleado);
+			return "formulario";
 
 		} else {
-			sueldo = empleado.getNomina().sueldo(empleado.getCategoria(), empleado.getAntiguedad());
-			empleado.getNomina().setId(empleado.getId());
-			empleado.getNomina().setSueldo(sueldo);
-			empleadoService.guardarEmpleado(empleado);
-		}
 
-		return "redirect:/controlador/lista";
+			int sueldo;
+
+			if (empleado.getNomina().getDni() == null || empleado.getNomina().getDni().isEmpty()) {
+
+				Nomina nomina = new Nomina();
+
+				sueldo = nomina.sueldo(empleado.getCategoria(), empleado.getAntiguedad());
+
+				nomina.setDni(empleado.getDni());
+				nomina.setSueldo(sueldo);
+
+				empleado.setNomina(nomina);
+				empleadoService.guardarEmpleado(empleado);
+
+			} else {
+				sueldo = empleado.getNomina().sueldo(empleado.getCategoria(), empleado.getAntiguedad());
+				empleado.getNomina().setId(empleado.getId());
+				empleado.getNomina().setSueldo(sueldo);
+				empleadoService.guardarEmpleado(empleado);
+
+			}
+
+			return "redirect:/controlador/lista";
+		}
 	}
 
 	@GetMapping("/actualizar")
-	public String recogerEmpleado(@RequestParam("empleadoId") int id, Model model) {
-
+	public String recogerEmpleado(@RequestParam("id") int id, Model model) {
 		Empleado empleado = empleadoService.traerEmpleado(id);
 
 		model.addAttribute("empleado", empleado);
@@ -82,7 +103,7 @@ public class Controlador {
 	}
 
 	@GetMapping("/eliminar")
-	public String eliminarEmpleado(@RequestParam("empleadoId") int id) {
+	public String eliminarEmpleado(@RequestParam("id") int id) {
 
 		empleadoService.eliminarEmpleado(id);
 

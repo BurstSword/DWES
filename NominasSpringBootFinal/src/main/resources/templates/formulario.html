@@ -6,47 +6,88 @@
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
           crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{styles.css}">
 </head>
 <body>
 <div class="container bg-dark text-light pt-4 col-12">
     <h2>Gestion de empleados</h2>
 </div>
 
-<div th:form class="container pt-5 f-flex">
+<div class="container card col-md-5 justify-content-center">
     <h3>Formulario</h3>
-    <form class="pt-3 col-2" action="#" th:action="@{/controlador/guardaEmpleado}"
-          th:modelAttribute="empleado" method="POST"></form>
+    <form th:action="@{/controlador/guardarEmpleado}"
+          th:object="${empleado}" method="POST">
 
 
-    <h3 th:hidden th:value="id" ></h3>
-    <h3 th:hidden th:value="nomina.dni"></h3>
+    <input type="hidden" th:field="*{id}">
+    <input type="hidden" th:field="*{nomina.dni}">
 
-        <div class="form-group d-flex flex-column">
-            <label>Nombre:</label>
-            <input th:field="${empleado.getNombre()}"/>
+    <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <div class="d-flex align-items-center">
+            <input
+                    type="text"
+                    id="nombre"
+                    class="form-control"
+                    th:field="*{nombre}"
+            />
+            <span th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}" ></span>
         </div>
-        <div class="form-group d-flex flex-column">
-            <label>Dni:</label>
-            <input th:field="${empleado.getDni()}"/>
+    </div>
+    <div class="form-group">
+        <label for="dni">Dni:</label>
+        <div class="d-flex align-items-center">
+            <input
+                    type="text"
+                    id="dni"
+                    class="form-control"
+                    th:field="*{dni}"
+            />
+            <span th:if="${#fields.hasErrors('dni')}" th:errors="*{dni}" ></span>
         </div>
-        <div class="form-group d-flex flex-column">
-            <label>Sexo:</label>
-            <input th:field="${empleado.getSexo()}"/>
+    </div>
+    <div class="form-group">
+        <label for="sexo">Sexo:</label>
+        <div class="d-flex align-items-center">
+            <input
+                    class="form-control"
+                    type="text"
+                    id="sexo"
+                    th:field="*{sexo}"
+            />
+            <span th:if="${#fields.hasErrors('sexo')}" th:errors="*{sexo}" ></span>
         </div>
-        <div class="form-group d-flex flex-column">
-            <label>Categoria:</label>
-            <input th:field="${empleado.getCategoria()}"/>
+    </div>
+    <div class="form-group">
+        <label for="categoria">Categoria:</label>
+        <div class="d-flex align-items-center">
+            <input
+                    class="form-control"
+                    type="text"
+                    id="categoria"
+                    th:field="*{categoria}"
+            />
+            <span th:if="${#fields.hasErrors('categoria')}" th:errors="*{categoria}" ></span>
         </div>
-        <div class="form-group d-flex flex-column">
-            <label>Antiguedad:</label>
-            <input th:field="${empleado.getAntiguedad()}"/>
+    </div>
+    <div class="form-group">
+        <label for="antiguedad">Antiguedad:</label>
+        <div class="d-flex align-items-center">
+            <input
+                    class="form-control"
+                    type="text"
+                    id="antiguedad"
+                    th:field="*{antiguedad}"
+            />
+            <span th:if="${#fields.hasErrors('antiguedad')}" th:errors="*{antiguedad}" ></span>
         </div>
+    </div>
 
-        <input class="btn btn-success" type="submit" value="Guardar empleado">
-
+    <input class="btn btn-success mt-3" type="submit" value="Guardar empleado">
+    </form>
 
 </div>
-<a class="btn btn-secondary ml-5" th:href="@{/controlador/paginaPrincipal}">Volver</a>
+<a class="btn btn-secondary ml-5" th:href="@{/controlador/lista}">Volver</a>
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -60,4 +101,4 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
 </body>
-</html>l>
+</html>

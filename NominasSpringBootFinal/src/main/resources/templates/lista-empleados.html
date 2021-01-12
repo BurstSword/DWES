@@ -32,14 +32,14 @@
         </thead>
         <tbody>
         <tr th:each="empleado : ${empleados}" class="lead text-center">
-            <td th:text="${empleado.getNombre()}"></td>
-            <td th:text="${empleado.getDni()}"></td>
-            <td th:text="${empleado.getSexo()}"></td>
-            <td th:text="${empleado.getCategoria()}"></td>
-            <td th:text="${empleado.getAntiguedad()}"></td>
-            <td><a th:href="@{/controlador/actualizar}" class="btn btn-warning">Actualizar</a></td>
-            <td><a th:href="@{/controlador/eliminar}" class="btn btn-danger"
-                   onclick="if (!(confirm('¿Seguro que quieres eliminar a ${empleado.nombre}?'))) return false">Eliminar</a>
+            <td th:text="${empleado.nombre}"></td>
+            <td th:text="${empleado.dni}"></td>
+            <td th:text="${empleado.sexo}"></td>
+            <td th:text="${empleado.categoria}"></td>
+            <td th:text="${empleado.antiguedad}"></td>
+            <td><a th:href="@{/controlador/actualizar(id=${empleado.id})}" class="btn btn-warning">Actualizar</a></td>
+            <td><a th:href="@{/controlador/eliminar(id=${empleado.id})}" class="btn btn-danger"
+                   onclick="if (!(confirm('¿Seguro que quieres eliminarlo?'))) return false">Eliminar</a>
             </td>
         </tr>
         </tbody>
