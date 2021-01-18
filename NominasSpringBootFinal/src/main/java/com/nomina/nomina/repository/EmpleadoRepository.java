@@ -12,6 +12,6 @@ import org.springframework.stereotype.Repository;
 public interface EmpleadoRepository extends CrudRepository<Empleado, Integer> {
 	
 	@Query("FROM Nomina WHERE dni = ?1")
-	public Nomina getNomina(String dni);
+	Nomina getNomina(String dni);
 	
 }

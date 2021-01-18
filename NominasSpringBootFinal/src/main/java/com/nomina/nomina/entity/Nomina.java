@@ -23,7 +23,7 @@ public class Nomina {
     @OneToOne(mappedBy="nomina", cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH} )
     private Empleado empleado;
     
-    private static final int SUELDO_BASE[] = { 50000, 70000, 90000, 110000, 130000, 150000, 170000, 190000, 210000,
+    private static final int[] SUELDO_BASE = { 50000, 70000, 90000, 110000, 130000, 150000, 170000, 190000, 210000,
             230000 };
 
 	public int sueldo(int categoria, int anyos) {
