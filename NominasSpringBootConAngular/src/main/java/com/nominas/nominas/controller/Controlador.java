@@ -23,7 +23,7 @@ public class Controlador {
 	private EmpleadoService empleadoService;
 
 
-	@GetMapping("lista")
+	@GetMapping("/lista")
 	public List<Empleado> listaEmpleados() {
 
 		 return empleadoService.listarEmpleados();
@@ -54,7 +54,7 @@ public class Controlador {
 	}
 
 	@PostMapping("/sueldo")
-	public Nomina pruebaEmpleado(@RequestParam String dni) {
+	public Nomina pruebaEmpleado(@RequestParam("dni") String dni) {
 
 		return empleadoService.traerSueldo(dni);
 
